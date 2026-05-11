@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import './App.css'
-
-const gameStates = [
-"start",
-"addPlayers"
-]
+import "./App.css";
+import Home from "./pages/Home";
+import { useLocalStorage } from "usehooks-ts";
+import { GameContext, SCREENS } from "./Contexts";
+import Navigation from "./components/Navigation";
 
 function App() {
-  const [gameState, setGameState] = useState<number>(0);
+    const [gameState, setGameState] = useLocalStorage<string>(
+        "gameState",
+        SCREENS.SETUP,
+    );
 
-  return (
-    <>
-      <main className='sm:max-w-md max-w-sm mx-auto'>
-        {gameState > 0 && <button onClick={() => setGameState(gameState => gameState - 1)}>back</button>}
-        {gameStates[gameState] == "start" && <div>Select Mode</div>}
-        {gameStates[gameState] == "addPlayers" && <div>Add players</div>}
-
-        {gameState < gameStates.length-1 && <button className='' onClick={() => setGameState(gameState => gameState + 1)}>Next</button>}
-      </main>
-
-    </>
-  )
+    return (
+        <>
+            <GameContext value={{ gameState, setGameState }}>
+                <Navigation />
+                <main className="sm:max-w-md max-w-xs mx-auto">
+                    {gameState == SCREENS.SETUP && <Home />}
+                    {gameState == SCREENS.DRINK && <div>Drink screen</div>}
+                </main>
+            </GameContext>
+        </>
+    );
 }
 
-export default App
+export default App;
