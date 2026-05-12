@@ -10,11 +10,15 @@ function App() {
         SCREENS.SETUP,
     );
 
+    const [players, setPlayers] = useLocalStorage<string[]>("players", []);
+
     return (
         <>
-            <GameContext value={{ gameState, setGameState }}>
+            <GameContext
+                value={{ gameState, setGameState, players, setPlayers }}
+            >
                 <Navigation />
-                <main className="sm:max-w-md max-w-xs mx-auto">
+                <main className="sm:max-w-md max-w-xs  mx-auto">
                     {gameState == SCREENS.SETUP && <Home />}
                     {gameState == SCREENS.DRINK && <div>Drink screen</div>}
                 </main>

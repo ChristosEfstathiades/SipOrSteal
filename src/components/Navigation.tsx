@@ -11,15 +11,15 @@ export default function Navigation() {
     return (
         <>
             <Modal open={open} onClose={handleClose}>
-                <div className="absolute top-1/2 left-1/2 cursor-pointer -translate-x-1/2 -translate-y-1/2 text-center w-sm">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
                     <button
-                        className="text-white font-medium capitalize bg-accent py-4 px-12 rounded-xl"
+                        className="text-white text-2xl cursor-pointer font-medium capitalize bg-accent py-4 px-12 rounded-xl"
                         onClick={() => {
                             setGameState(SCREENS.SETUP);
                             handleClose();
                         }}
                     >
-                        Restart Game
+                        Restart
                     </button>
                 </div>
             </Modal>
