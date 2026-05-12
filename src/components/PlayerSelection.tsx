@@ -33,12 +33,12 @@ export default function PlayerSelection() {
                         className="bg-[#1a1a2e] rounded-xl border-white/15 border text-white px-4 py-3 outline-0"
                         name="playerName"
                     />
-                    <button
+                    {/* <button
                         type="submit"
                         className="bg-accent text-white rounded-xl px-4 py-1 font-medium flex self-center"
                     >
                         ADD
-                    </button>
+                    </button> */}
                 </form>
                 <div className="flex flex-row gap-3 flex-wrap">
                     {players.map((player, index) => (

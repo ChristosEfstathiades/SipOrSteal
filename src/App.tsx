@@ -12,10 +12,19 @@ function App() {
 
     const [players, setPlayers] = useLocalStorage<string[]>("players", []);
 
+    const [menus, setMenus] = useLocalStorage<string[]>("menus", []);
+
     return (
         <>
             <GameContext
-                value={{ gameState, setGameState, players, setPlayers }}
+                value={{
+                    gameState,
+                    setGameState,
+                    players,
+                    setPlayers,
+                    menus,
+                    setMenus,
+                }}
             >
                 <Navigation />
                 <main className="sm:max-w-md max-w-xs  mx-auto">
