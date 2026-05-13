@@ -14,7 +14,7 @@ export default function Home() {
             <MenuSelection />
 
             <button
-                className="text-white text-2xl cursor-pointer font-medium capitalize bg-green-700 border border-black/15 py-4 px-12 rounded-xl"
+                className="text-white text-2xl cursor-pointer font-medium capitalize bg-green-700 border-2 border-black/15 py-4 px-12 rounded-xl"
                 onClick={() => {
                     setGameState(SCREENS.DRINK);
                 }}

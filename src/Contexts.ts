@@ -3,9 +3,6 @@ import { createContext } from "react";
 const SCREENS: { [key: string]: string } = {
     SETUP: "setup",
     DRINK: "drink",
-    QUESTIONS: "questions",
-    STEAL: "steal",
-    SCORES: "scores",
 };
 
 const MENUS: {

@@ -1,4 +1,4 @@
-import { GameContext, MENUS } from "../Contexts";
+import { GameContext, MENUS, SCREENS } from "../Contexts";
 import { useContext } from "react";
 
 function toggleMenu(menuCategory: string, menus: string[]) {
@@ -10,7 +10,7 @@ function toggleMenu(menuCategory: string, menus: string[]) {
 }
 
 export default function MenuSelection() {
-    const { menus, setMenus } = useContext(GameContext);
+    const { menus, setMenus, setGameState } = useContext(GameContext);
 
     return (
         <>
@@ -31,6 +31,18 @@ export default function MenuSelection() {
                         </button>
                     ))}
                 </div>
+                <hr />
+                <p className="text-center">Or choose your own drinks</p>
+                <button>
+                    <button
+                        className="text-white px-4.5 py-2.5 rounded-4xl border-2 cursor-pointer font-semibold capitalize bg-orange-700  border-black/15"
+                        onClick={() => {
+                            setGameState(SCREENS.DRINK);
+                        }}
+                    >
+                        Custom Drinks
+                    </button>
+                </button>
             </div>
         </>
     );
