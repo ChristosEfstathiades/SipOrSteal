@@ -16,7 +16,7 @@ export default function Home() {
             <button
                 className="text-white text-2xl cursor-pointer font-medium capitalize bg-green-700 border-2 border-black/15 py-4 px-12 rounded-xl"
                 onClick={() => {
-                    setGameState(SCREENS.DRINK);
+                    setGameState(SCREENS.GAMEPLAY);
                 }}
             >
                 Start Game

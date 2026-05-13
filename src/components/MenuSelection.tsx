@@ -2,10 +2,14 @@ import { GameContext, MENUS, SCREENS } from "../Contexts";
 import { useContext } from "react";
 
 function toggleMenu(menuCategory: string, menus: string[]) {
+    let newMenus = [...menus];
+    if (menus.includes("custom")) {
+        newMenus = newMenus.filter((menu: string) => menu !== "custom");
+    }
     if (menus.includes(menuCategory)) {
-        return menus.filter((menu: string) => menu !== menuCategory);
+        return newMenus.filter((menu: string) => menu !== menuCategory);
     } else {
-        return [...menus, menuCategory];
+        return [...newMenus, menuCategory];
     }
 }
 
@@ -38,6 +42,7 @@ export default function MenuSelection() {
                         className="text-white px-4.5 py-2.5 rounded-4xl border-2 cursor-pointer font-semibold capitalize bg-orange-700  border-black/15"
                         onClick={() => {
                             setGameState(SCREENS.DRINK);
+                            setMenus(["custom"]);
                         }}
                     >
                         Custom Drinks
