@@ -53,6 +53,8 @@ const GameContext = createContext<{
     setPlayers: (players: string[]) => void;
     menus: string[];
     setMenus: (menus: string[]) => void;
+    drinks: string[];
+    setDrinks: (drinks: string[]) => void;
 }>({
     gameState: SCREENS.SETUP,
     setGameState: () => {},
@@ -60,6 +62,8 @@ const GameContext = createContext<{
     setPlayers: () => {},
     menus: [],
     setMenus: () => {},
+    drinks: [],
+    setDrinks: () => {},
 });
 
 export { GameContext, SCREENS, MENUS };

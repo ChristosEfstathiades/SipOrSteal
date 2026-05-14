@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { GameContext, SCREENS } from "../Contexts";
 
 export default function Navigation() {
-    const { setGameState } = useContext(GameContext);
+    const { setGameState, setDrinks } = useContext(GameContext);
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -16,6 +16,7 @@ export default function Navigation() {
                         className="text-white text-2xl cursor-pointer border-2 border-black/15 font-medium capitalize bg-accent py-4 px-12 rounded-xl"
                         onClick={() => {
                             setGameState(SCREENS.SETUP);
+                            setDrinks([]);
                             handleClose();
                         }}
                     >

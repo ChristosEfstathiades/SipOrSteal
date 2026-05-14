@@ -15,6 +15,8 @@ function App() {
 
     const [menus, setMenus] = useLocalStorage<string[]>("menus", []);
 
+    const [drinks, setDrinks] = useLocalStorage<string[]>("drinks", []);
+
     return (
         <>
             <GameContext
@@ -25,6 +27,8 @@ function App() {
                     setPlayers,
                     menus,
                     setMenus,
+                    drinks,
+                    setDrinks,
                 }}
             >
                 <Navigation />
