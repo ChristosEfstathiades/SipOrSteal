@@ -4,6 +4,7 @@ import { useLocalStorage } from "usehooks-ts";
 import { GameContext, SCREENS } from "./Contexts";
 import Navigation from "./components/Navigation";
 import CustomDrinks from "./pages/CustomDrinks";
+import Gameplay from "./pages/Gameplay";
 
 function App() {
     const [gameState, setGameState] = useLocalStorage<string>(
@@ -35,6 +36,7 @@ function App() {
                 <main className="sm:max-w-md max-w-xs  mx-auto">
                     {gameState == SCREENS.SETUP && <Home />}
                     {gameState == SCREENS.DRINK && <CustomDrinks />}
+                    {gameState == SCREENS.GAMEPLAY && <Gameplay />}
                 </main>
             </GameContext>
         </>
