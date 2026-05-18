@@ -1,4 +1,4 @@
-import { GameContext, SCREENS } from "../Contexts";
+import { GameContext } from "../Contexts";
 import { useContext } from "react";
 
 export default function Gameplay() {
