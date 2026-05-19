@@ -63,7 +63,10 @@ export default function Gameplay() {
             stolen,
         };
         const drinker = stolen ? currentPair.questioner : currentPair.revealer;
-        setAssignedDrinks((prev) => ({ ...prev, [drinker]: currentPair.drink }));
+        setAssignedDrinks((prev) => ({
+            ...prev,
+            [drinker]: currentPair.drink,
+        }));
         setRoundResults((prev) => [...prev, result]);
         setLastResult(result);
         setPhase("pair-result");
@@ -338,10 +341,7 @@ export default function Gameplay() {
                     </div>
                 </div>
 
-                <button
-                    className={primaryBtn}
-                    onClick={advanceFromPairResult}
-                >
+                <button className={primaryBtn} onClick={advanceFromPairResult}>
                     {isLastPair ? "End Round" : "Next Pair"}
                 </button>
             </div>
@@ -440,7 +440,9 @@ export default function Gameplay() {
             <div className={screen}>
                 <div className="text-center">
                     <p className="text-5xl font-black">Game Over!</p>
-                    <p className="text-gray-400 mt-2">Everyone has their fate</p>
+                    <p className="text-gray-400 mt-2">
+                        Everyone has their fate
+                    </p>
                 </div>
 
                 <div className={`${card} flex flex-col gap-3`}>

@@ -46,7 +46,7 @@ export default function PlayerSelection() {
                             key={index}
                             className="bg-white/85 rounded-xl border-black/15 border flex gap-x-2 py-1 px-1.5"
                         >
-                            <p className="text-black/70 flex items-center">
+                            <p className="text-black/70 font-medium flex items-center">
                                 {player}
                             </p>
                             <button
